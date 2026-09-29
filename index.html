@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kushank Maheshwari</title>
+  <meta name="description" content="Senior Software Engineer at Tekion. Building cloud-native infra, automation platforms, and full-stack products.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-counter" id="loaderCounter">000</div>
+    <div class="loader-bar-track"><div class="loader-bar" id="loaderBar"></div></div>
+  </div>
+
+  <!-- NAV (pill, floats at top) -->
+  <nav id="nav">
+    <div class="nav-pill" id="navPill">
+      <a href="#hero" class="nav-logo-ring" aria-label="Home">
+        <span class="nav-initials">KM</span>
+      </a>
+      <div class="nav-divider"></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects"   class="nav-link">Projects</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-divider"></div>
+      <a href="mailto:mkushank2000@gmail.com" class="nav-cta">
+        Say hi <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner container">
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span class="status-dot"></span>
+          Senior Software Engineer · Tekion · Bangalore
+        </p>
+        <h1 class="hero-name">
+          Kushank<br>
+          <em>Maheshwari</em>
+        </h1>
+        <p class="hero-tagline">
+          I build cloud-native infrastructure, automation platforms,
+          and full-stack products — where engineering rigour
+          meets elegant software.
+        </p>
+        <div class="hero-ctas">
+          <a href="mailto:mkushank2000@gmail.com" class="btn-primary">
+            Get in touch
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://github.com/Kushank24" target="_blank" rel="noopener" class="btn-outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="Kushank_Maheshwari_Resume.pdf" download class="btn-outline">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Résumé
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="photo-wrap">
+          <img src="image.jpeg" alt="Kushank Maheshwari" class="hero-photo">
+          <div class="photo-ring"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats container">
+      <div class="stat">
+        <span class="stat-num count" data-target="30">0</span><span class="stat-unit">%</span>
+        <span class="stat-label">Dev productivity lift</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-num count" data-target="15">0</span><span class="stat-unit">%</span>
+        <span class="stat-label">Incident mgmt improvement</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-prefix">AIR </span><span class="stat-num count" data-target="100">0</span>
+        <span class="stat-label">U-13 Chess Nationals</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <span class="stat-num count" data-target="1">0</span><span class="stat-unit">/100</span>
+        <span class="stat-label">Western Digital STEM Scholarship</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Career</span>
+        <h2 class="section-title">Work <em>Experience</em></h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-left">
+            <span class="tl-date">Nov 2025 — Present</span>
+            <span class="tl-badge current">Current</span>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot active"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-right">
+            <div class="tl-company">Tekion</div>
+            <div class="tl-role">Senior Software Engineer</div>
+            <ul class="tl-bullets">
+              <li><strong>Cloud-Native CI/CD Migration:</strong> Architected a scalable CI platform leveraging Tekton on Amazon EKS, eliminating legacy Jenkins upgrade bottlenecks and standardising deployment pipelines to cloud-native architecture.</li>
+              <li><strong>Infrastructure Automation:</strong> Developed standardised infrastructure and platform blueprints using Facets to enable automated scaling and rapid environment replication, significantly reducing provisioning delays.</li>
+            </ul>
+            <div class="tl-stack">
+              <span>Tekton</span><span>Jenkins</span><span>AWS</span><span>Kubernetes</span><span>Facets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-left">
+            <span class="tl-date">Jan 2023 — Oct 2025</span>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-right">
+            <div class="tl-company">Flipkart</div>
+            <div class="tl-role">Software Development Engineer — SDE-2</div>
+            <ul class="tl-bullets">
+              <li><strong>Automated Upgrade Framework:</strong> Engineered a CI/CD-integrated pipeline for iterative OS and JDK upgrades with automated log analysis and intelligent re-runs — boosting developer productivity by <strong>30%</strong>.</li>
+              <li><strong>Event-Driven RCA Engine:</strong> Architected an automated Root Cause Analysis system using event-driven triggers to generate reports instantly upon incident detection — improving incident management efficiency by <strong>15%</strong>.</li>
+            </ul>
+            <div class="tl-stack">
+              <span>Kubernetes</span><span>GCP</span><span>Airflow</span><span>Python</span><span>SQL</span><span>Langgraph</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-left">
+            <span class="tl-date">Jun 2022 — Aug 2022</span>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-right">
+            <div class="tl-company">Goldman Sachs</div>
+            <div class="tl-role">Summer Analyst — Corporate Treasury, P&L Stats</div>
+            <ul class="tl-bullets">
+              <li><strong>Liability Hedging Optimisation:</strong> Modelled and simulated hedging strategies for unsecured liabilities to optimise WACD, resulting in a measurable reduction in negative P&L.</li>
+              <li><strong>Quantitative Debt Analysis:</strong> Executed deep-dive analytics on bond datasets exceeding <strong>10,000 daily entries</strong> to identify WACD drivers and provide data-driven insights.</li>
+            </ul>
+            <div class="tl-stack">
+              <span>Slang</span><span>C++</span><span>Excel</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Work</span>
+        <h2 class="section-title">Featured <em>Projects</em></h2>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- ERP — large card -->
+        <div class="bento-card bento-large fade-up">
+          <div class="bento-body">
+            <div class="bento-tags">
+              <span class="btag green">Full-Stack</span>
+              <span class="btag blue">Freelance · 2024–25</span>
+            </div>
+            <h3 class="bento-title">Manufacturing ERP <em>&amp; MRP System</em></h3>
+            <p class="bento-desc">
+              Architected a full-scale ERP platform to digitise a manufacturing lifecycle — inventory management, BOQ, work orders, and a custom analytics dashboard tracking production costs and sales trends.
+            </p>
+            <ul class="bento-list">
+              <li>Inventory, BOQ, purchase &amp; work order management</li>
+              <li>Custom analytics dashboard for cost &amp; sales tracking</li>
+              <li>Role-based access with Supabase Auth</li>
+              <li>Next.js rewrite of the original Streamlit app</li>
+            </ul>
+            <div class="bento-stack">
+              <code>Next.js</code><code>FastAPI</code><code>Supabase</code><code>PostgreSQL</code><code>Python</code><code>GCP</code>
+            </div>
+          </div>
+          <div class="bento-visual erp-visual">
+            <div class="module-grid">
+              <div class="mod">Inventory</div>
+              <div class="mod">BOQ</div>
+              <div class="mod">Products</div>
+              <div class="mod">Purchase Orders</div>
+              <div class="mod">Work Orders</div>
+              <div class="mod">Finished Goods</div>
+              <div class="mod">Sales Orders</div>
+              <div class="mod">CRM</div>
+              <div class="mod">Pricing</div>
+              <div class="mod">Suppliers</div>
+              <div class="mod">Analytics</div>
+              <div class="mod">Settings</div>
+            </div>
+            <p class="visual-note">15+ modules across the manufacturing lifecycle</p>
+          </div>
+        </div>
+
+        <!-- Stock UI — smaller card -->
+        <div class="bento-card bento-small fade-up">
+          <div class="bento-body">
+            <div class="bento-tags">
+              <span class="btag purple">Frontend</span>
+              <span class="btag blue">Finance</span>
+            </div>
+            <h3 class="bento-title">Stock Market <em>Dashboard</em></h3>
+            <p class="bento-desc">
+              A React-based stock market UI with real-time price charts, portfolio tracking, and market analytics.
+            </p>
+            <ul class="bento-list">
+              <li>Interactive charts with zoom &amp; range selectors</li>
+              <li>Portfolio gain/loss indicators</li>
+              <li>Watchlist &amp; company fundamentals</li>
+            </ul>
+            <div class="bento-stack">
+              <code>React</code><code>Chart.js</code><code>JavaScript</code><code>REST APIs</code>
+            </div>
+            <a href="https://github.com/Kushank24/stock-ui" target="_blank" rel="noopener" class="bento-link">
+              View on GitHub
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+          <div class="bento-visual chart-visual">
+            <canvas id="stockChart" aria-label="Stock price trend chart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Toolkit</span>
+        <h2 class="section-title">Skills &amp; <em>Technologies</em></h2>
+      </div>
+
+      <div class="skills-wrap">
+        <div class="skill-group fade-up">
+          <h4 class="sg-title">Languages</h4>
+          <div class="sg-tags">
+            <span class="sg-tag hi">Python</span>
+            <span class="sg-tag hi">Java</span>
+            <span class="sg-tag hi">SQL</span>
+            <span class="sg-tag">C / C++</span>
+            <span class="sg-tag">TypeScript</span>
+            <span class="sg-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group fade-up">
+          <h4 class="sg-title">Frameworks</h4>
+          <div class="sg-tags">
+            <span class="sg-tag hi">FastAPI</span>
+            <span class="sg-tag hi">Django</span>
+            <span class="sg-tag">Next.js</span>
+            <span class="sg-tag">React</span>
+            <span class="sg-tag">Langgraph</span>
+          </div>
+        </div>
+        <div class="skill-group fade-up">
+          <h4 class="sg-title">Infrastructure</h4>
+          <div class="sg-tags">
+            <span class="sg-tag hi">Kubernetes</span>
+            <span class="sg-tag hi">GCP</span>
+            <span class="sg-tag hi">AWS</span>
+            <span class="sg-tag">Tekton</span>
+            <span class="sg-tag">Airflow</span>
+            <span class="sg-tag">Docker</span>
+          </div>
+        </div>
+        <div class="skill-group fade-up">
+          <h4 class="sg-title">Architecture</h4>
+          <div class="sg-tags">
+            <span class="sg-tag hi">Microservices</span>
+            <span class="sg-tag hi">Event-Driven</span>
+            <span class="sg-tag">CI/CD</span>
+            <span class="sg-tag">REST APIs</span>
+            <span class="sg-tag">Slang</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Background</span>
+        <h2 class="section-title"><em>Education</em></h2>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-left">
+          <div class="edu-mono">BITS</div>
+        </div>
+        <div class="edu-right">
+          <div class="edu-school">Birla Institute of Technology and Science, Pilani</div>
+          <div class="edu-degree">M.Sc. Mathematics + B.E. Computer Science — Dual Degree</div>
+          <div class="edu-row">
+            <span class="edu-pill">2018 – 2023</span>
+            <span class="edu-pill highlight">CGPA 8.76 / 10</span>
+            <span class="edu-pill">Pilani, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner fade-up">
+        <p class="contact-eyebrow">Let's connect</p>
+        <h2 class="contact-heading">Have a project in mind?<br><em>Let's talk.</em></h2>
+        <a href="mailto:mkushank2000@gmail.com" class="contact-email-btn">
+          mkushank2000@gmail.com
+          <span class="arrow-box">↗</span>
+        </a>
+        <div class="contact-links">
+          <a href="https://github.com/Kushank24" target="_blank" rel="noopener">GitHub</a>
+          <span class="dot-sep">·</span>
+          <a href="tel:+919214560741">+91 92145 60741</a>
+          <span class="dot-sep">·</span>
+          <span>Bangalore, India</span>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container footer-row">
+        <span class="footer-name">Kushank Maheshwari</span>
+        <span class="footer-copy">© 2026</span>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
