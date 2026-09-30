@@ -25,10 +25,12 @@
       </a>
       <div class="nav-divider"></div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects"   class="nav-link">Projects</a></li>
-        <li><a href="#skills"     class="nav-link">Skills</a></li>
-        <li><a href="#contact"    class="nav-link">Contact</a></li>
+        <li><a href="#experience"  class="nav-link">Experience</a></li>
+        <li><a href="#projects"    class="nav-link">Projects</a></li>
+        <li><a href="#opensource"  class="nav-link">OSS</a></li>
+        <li><a href="#research"    class="nav-link">Research</a></li>
+        <li><a href="#skills"      class="nav-link">Skills</a></li>
+        <li><a href="#contact"     class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-divider"></div>
       <a href="mailto:mkushank2000@gmail.com" class="nav-cta">
@@ -255,6 +257,144 @@
           </div>
           <div class="bento-visual chart-visual">
             <canvas id="stockChart" aria-label="Stock price trend chart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section id="opensource">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Community</span>
+        <h2 class="section-title">Open Source <em>Contributions</em></h2>
+      </div>
+
+      <div class="os-list">
+
+        <div class="os-card fade-up">
+          <div class="os-card-inner">
+            <div class="os-body">
+              <div class="os-header-row">
+                <div class="os-repo-label">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="os-gh-icon"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span class="os-repo-name">openrewrite / rewrite-spring</span>
+                </div>
+                <a href="https://github.com/openrewrite/rewrite-spring/pull/688" target="_blank" rel="noopener" class="os-pr-badge">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 9v12"/><path d="M18 6v.01"/></svg>
+                  PR #688 · Merged
+                </a>
+              </div>
+
+              <h3 class="os-title">Spring JDBC — <em>queryForLong → queryForObject</em> Migration Recipe</h3>
+              <p class="os-desc">
+                Authored an automated OpenRewrite recipe for the rewrite-spring library that migrates deprecated <code>JdbcTemplate.queryForLong()</code> calls — removed in Spring 5.3 — to the modern <code>queryForObject()</code> equivalent. The recipe performs direct AST manipulation on Java method invocations and was merged into the Spring Framework 6 upgrade composite, shipping to thousands of downstream projects.
+              </p>
+
+              <div class="os-chips">
+                <span class="os-chip">Spring Framework 6</span>
+                <span class="os-chip">OpenRewrite</span>
+                <span class="os-chip">Java AST</span>
+                <span class="os-chip">JDBC Migration</span>
+                <span class="os-chip">boot-3.0</span>
+              </div>
+
+              <a href="https://github.com/openrewrite/rewrite-spring/pull/688" target="_blank" rel="noopener" class="bento-link os-cta">
+                View Pull Request
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+
+            <div class="os-visual">
+              <div class="diff-block">
+                <div class="diff-filename">JdbcTemplateQueryForLongMigration.java</div>
+                <div class="diff-line removed"><span class="diff-sign">−</span><span class="diff-code">jdbcTemplate.<span class="diff-hl-red">queryForLong</span>(sql, args)</span></div>
+                <div class="diff-line added"><span class="diff-sign">+</span><span class="diff-code">jdbcTemplate.<span class="diff-hl-green">queryForObject</span>(sql, Long.class, args)</span></div>
+              </div>
+              <p class="visual-note">AST-based migration · Spring 6 composite</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Academia</span>
+        <h2 class="section-title">Research <em>Papers</em></h2>
+      </div>
+
+      <div class="research-list">
+
+        <div class="research-card fade-up">
+          <div class="research-card-inner">
+            <div class="research-body">
+              <div class="research-meta-row">
+                <span class="research-venue-badge">ResearchGate · 2021</span>
+                <span class="research-domain-badge">Quantitative Finance · Machine Learning</span>
+              </div>
+
+              <h3 class="research-title">Stock Price Prediction using <em>Hidden Markov Models</em> and understanding the nature of underlying Hidden States</h3>
+
+              <p class="research-abstract">
+                Investigated the application of Hidden Markov Models (HMMs) to financial time-series forecasting, modelling stock price sequences as observations emitted by latent market regimes. The paper characterises the nature of the inferred hidden states — mapping them to interpretable market conditions such as bull, bear, and sideways trends — and evaluates prediction accuracy against baseline methods. Grounded in measure-theoretic probability and stochastic processes from an M.Sc. Mathematics thesis at BITS Pilani.
+              </p>
+
+              <div class="research-tags">
+                <span class="rtag">Hidden Markov Models</span>
+                <span class="rtag">Time-Series Forecasting</span>
+                <span class="rtag">Stochastic Processes</span>
+                <span class="rtag">Python</span>
+                <span class="rtag">NumPy · hmmlearn</span>
+              </div>
+
+              <a href="https://www.researchgate.net/publication/351869777_Stock_Price_Prediction_using_Hidden_Markov_Models_and_understanding_the_nature_of_underlying_Hidden_States" target="_blank" rel="noopener" class="bento-link research-cta">
+                Read on ResearchGate
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+
+            <div class="research-visual">
+              <div class="hmm-diagram">
+                <div class="hmm-title-label">Hidden Markov Model</div>
+                <div class="hmm-states-row">
+                  <div class="hmm-state bull">Bull</div>
+                  <div class="hmm-arrows">
+                    <svg viewBox="0 0 100 40" class="hmm-arrows-svg">
+                      <defs>
+                        <marker id="ah" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                          <path d="M0,0 L6,3 L0,6 Z" fill="#89AACC" opacity="0.7"/>
+                        </marker>
+                      </defs>
+                      <path d="M10,20 C30,5 70,5 90,20" stroke="#89AACC" stroke-width="1.2" fill="none" opacity="0.5" marker-end="url(#ah)"/>
+                      <path d="M90,20 C70,35 30,35 10,20" stroke="#89AACC" stroke-width="1.2" fill="none" opacity="0.5" marker-end="url(#ah)"/>
+                    </svg>
+                  </div>
+                  <div class="hmm-state bear">Bear</div>
+                </div>
+                <div class="hmm-sideways-row">
+                  <div class="hmm-state sideways">Sideways</div>
+                </div>
+                <div class="hmm-obs-row">
+                  <div class="hmm-obs-label">↓ Observations</div>
+                  <div class="hmm-obs-prices">
+                    <span class="hmm-p up">↑</span>
+                    <span class="hmm-p dn">↓</span>
+                    <span class="hmm-p up">↑</span>
+                    <span class="hmm-p flat">—</span>
+                    <span class="hmm-p up">↑</span>
+                    <span class="hmm-p dn">↓</span>
+                  </div>
+                </div>
+              </div>
+              <p class="visual-note">Latent market regime inference</p>
+            </div>
           </div>
         </div>
 
