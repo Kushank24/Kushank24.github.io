@@ -36,8 +36,32 @@
       <a href="mailto:mkushank2000@gmail.com" class="nav-cta">
         Say hi <span class="cta-arrow">↗</span>
       </a>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon-hamburger" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <rect y="0"  width="16" height="1.5" rx="1" fill="currentColor"/>
+          <rect y="5"  width="11" height="1.5" rx="1" fill="currentColor"/>
+          <rect y="10" width="16" height="1.5" rx="1" fill="currentColor"/>
+        </svg>
+        <svg class="icon-close" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <line x1="1" y1="1" x2="13" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="13" y1="1" x2="1"  y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#projects"   class="mobile-nav-link">Projects</a>
+      <a href="#opensource" class="mobile-nav-link">Open Source</a>
+      <a href="#research"   class="mobile-nav-link">Research</a>
+      <a href="#skills"     class="mobile-nav-link">Skills</a>
+      <a href="#contact"    class="mobile-nav-link">Contact</a>
+      <a href="mailto:mkushank2000@gmail.com" class="mobile-email-link">mkushank2000@gmail.com ↗</a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section id="hero">
