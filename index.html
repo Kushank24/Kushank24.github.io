@@ -215,8 +215,8 @@
 
       <div class="bento-grid">
 
-        <!-- ERP — large card -->
-        <div class="bento-card bento-large fade-up">
+        <!-- ERP -->
+        <div class="bento-card fade-up">
           <div class="bento-body">
             <div class="bento-tags">
               <span class="btag green">Full-Stack</span>
@@ -224,13 +224,15 @@
             </div>
             <h3 class="bento-title">Manufacturing ERP <em>&amp; MRP System</em></h3>
             <p class="bento-desc">
-              Architected a full-scale ERP platform to digitise a manufacturing lifecycle — inventory management, BOQ, work orders, and a custom analytics dashboard tracking production costs and sales trends.
+              Architected a full-scale ERP platform to digitise a manufacturing lifecycle — inventory, BOQ, work orders, automated notifications, and a custom analytics dashboard tracking production costs and sales trends.
             </p>
             <ul class="bento-list">
-              <li>Inventory, BOQ, purchase &amp; work order management</li>
-              <li>Custom analytics dashboard for cost &amp; sales tracking</li>
-              <li>Role-based access with Supabase Auth</li>
-              <li>Next.js rewrite of the original Streamlit app</li>
+              <li>Inventory, BOQ, purchase &amp; work order management across 15+ modules</li>
+              <li>Custom analytics dashboard for production cost tracking, sales trends &amp; margin analysis</li>
+              <li>Automated daily email digest flagging open quotations older than 15 days — prevents stale offers from slipping through</li>
+              <li>Scheduled account summary emails covering open work orders, pending payments, and recent dispatch activity</li>
+              <li>Role-based access control with Supabase Auth — separate views for floor, sales, and management</li>
+              <li>Next.js rewrite of the original Streamlit prototype — reduced load time by over 60%</li>
             </ul>
             <div class="bento-stack">
               <code>Next.js</code><code>FastAPI</code><code>Supabase</code><code>PostgreSQL</code><code>Python</code><code>GCP</code>
@@ -255,8 +257,63 @@
           </div>
         </div>
 
-        <!-- Stock UI — smaller card -->
-        <div class="bento-card bento-small fade-up">
+        <!-- Tekton CI/CD -->
+        <div class="bento-card fade-up">
+          <div class="bento-body">
+            <div class="bento-tags">
+              <span class="btag orange">Platform Eng</span>
+              <span class="btag blue">DevOps · Tekion</span>
+            </div>
+            <h3 class="bento-title">Scalable Tekton <em>CI/CD Platform</em></h3>
+            <p class="bento-desc">
+              Built a production CI/CD platform on AKS from scratch. Solved a fundamental scalability flaw in Tekton Dashboard — each user opens a WebSocket directly to the kube-api-server, bringing 1,000 users means 1,000 live control-plane connections.
+            </p>
+            <ul class="bento-list">
+              <li>Zero-to-production Tekton on AKS — pipelines, tasks, triggers &amp; RBAC from scratch</li>
+              <li>Global account mapping per environment — each dev/staging/prod namespace resolves its own cloud service principal at pipeline runtime, no hardcoded credentials</li>
+              <li>Per-pod deployment tracking — Tekton Results records metadata for every pod rollout across environments, giving full audit trail of what was deployed, when, and from which pipeline run</li>
+              <li>Custom dashboard backed by Tekton Results DB — zero kube-api pressure at scale</li>
+              <li>Azure Blob Storage for durable log retention beyond pod lifecycle</li>
+              <li>1,000 dashboard users no longer mean 1,000 live kube-api connections</li>
+            </ul>
+            <div class="bento-stack">
+              <code>Tekton</code><code>Kubernetes</code><code>AKS</code><code>Tekton Results</code><code>Azure Blob</code><code>Helm</code>
+            </div>
+          </div>
+          <div class="bento-visual">
+            <div class="arch-diagram">
+              <div class="arch-scenario">
+                <div class="arch-scenario-label bad">Before — Default Dashboard</div>
+                <div class="arch-flow">
+                  <span class="arch-node users">N Users</span>
+                  <span class="arch-arrow overload">→ WS×N →</span>
+                  <span class="arch-node danger">kube-api ⚠</span>
+                </div>
+              </div>
+              <div class="arch-scenario">
+                <div class="arch-scenario-label good">After — Custom Dashboard</div>
+                <div class="arch-flow">
+                  <span class="arch-node users">N Users</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node service">Custom UI</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node safe">Results DB</span>
+                </div>
+                <div class="arch-flow" style="margin-top:6px">
+                  <span class="arch-node service">Logs</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node safe">Azure Blob</span>
+                  <span class="arch-arrow" style="opacity:0.4">·</span>
+                  <span class="arch-node neutral">kube-api ✓</span>
+                </div>
+              </div>
+            </div>
+            <p class="visual-note">Control plane load decoupled from user concurrency</p>
+          </div>
+        </div>
+
+        <!-- Stock UI -->
+        <div class="bento-card fade-up">
           <div class="bento-body">
             <div class="bento-tags">
               <span class="btag purple">Frontend</span>
@@ -264,17 +321,20 @@
             </div>
             <h3 class="bento-title">Stock Market <em>Dashboard</em></h3>
             <p class="bento-desc">
-              A React-based stock market UI with real-time price charts, portfolio tracking, and market analytics.
+              A React-based stock market UI with real-time price charts, portfolio tracking, detailed charge breakdowns, and P&amp;L analytics — built to feel like a professional trading terminal.
             </p>
             <ul class="bento-list">
-              <li>Interactive charts with zoom &amp; range selectors</li>
-              <li>Portfolio gain/loss indicators</li>
-              <li>Watchlist &amp; company fundamentals</li>
+              <li>Interactive charts with zoom &amp; range selectors across multiple timeframes</li>
+              <li>MTD charge breakdown per trade — brokerage, STT, exchange fees, SEBI turnover charge, stamp duty &amp; GST computed and displayed line by line</li>
+              <li>Realized vs unrealized P&amp;L split per holding with annualised return calculation</li>
+              <li>DP charges tracker and end-of-day ledger reconciliation view</li>
+              <li>Watchlist with company fundamentals — P/E, EPS, 52-week range &amp; sector peers</li>
+              <li>Portfolio gain/loss indicators with day change and overall XIRR</li>
             </ul>
             <div class="bento-stack">
               <code>React</code><code>Chart.js</code><code>JavaScript</code><code>REST APIs</code>
             </div>
-            <a href="https://github.com/Kushank24/stock-ui" target="_blank" rel="noopener" class="bento-link">
+            <a href="https://github.com/Kushank24/stock-ui" target="_blank" rel="noopener" class="bento-link" style="margin-top:4px;display:inline-flex">
               View on GitHub
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>

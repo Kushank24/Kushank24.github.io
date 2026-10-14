@@ -648,9 +648,167 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 /* ─── BENTO GRID ─── */
+/* ─── PROJECT EXPANDING CARDS ─── */
+.projects-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 280px;
+}
+
+.proj-card {
+  flex: 1;
+  min-width: 140px;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s,
+              box-shadow 0.25s;
+  outline: none;
+}
+
+.proj-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--proj-color, var(--a1));
+  opacity: 0.65;
+  transition: opacity 0.25s;
+}
+
+.proj-card:hover::before,
+.proj-card.active::before { opacity: 1; }
+
+.proj-card--green  { --proj-color: var(--green); }
+.proj-card--orange { --proj-color: #e07b39; }
+.proj-card--purple { --proj-color: var(--purple); }
+
+.proj-card:hover,
+.proj-card.active {
+  flex: 2.8;
+  border-color: color-mix(in srgb, var(--proj-color, var(--a1)) 40%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--proj-color, var(--a1)) 10%, transparent),
+              0 20px 52px -10px rgba(0,0,0,0.45);
+}
+
+.proj-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.proj-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0 0 18px;
+  line-height: 1.25;
+}
+
+.proj-title em { font-style: italic; }
+
+.proj-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.proj-stack code {
+  font-size: 0.67rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: var(--font-mono, 'Courier New', monospace);
+  white-space: nowrap;
+}
+
+.proj-hint {
+  font-size: 0.62rem;
+  color: var(--muted2);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 16px;
+  transition: opacity 0.2s;
+}
+
+.proj-card:hover .proj-hint,
+.proj-card.active .proj-hint { opacity: 0; }
+
+.proj-detail {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.28s ease 0.18s,
+              max-height 0.5s ease 0.05s,
+              transform 0.32s ease 0.18s;
+  pointer-events: none;
+}
+
+.proj-card:hover .proj-detail,
+.proj-card.active .proj-detail {
+  opacity: 1;
+  max-height: 600px;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.proj-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.72;
+  margin: 20px 0 14px;
+}
+
+.proj-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.proj-list li {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.proj-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--proj-color, var(--a1));
+  font-size: 0.7rem;
+  top: 1px;
+}
+
 .bento-grid {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -706,6 +864,12 @@ section + section { border-top: 1px solid var(--border); }
   background: color-mix(in srgb, var(--purple) 12%, transparent);
   color: var(--purple);
   border: 1px solid color-mix(in srgb, var(--purple) 20%, transparent);
+}
+
+.btag.orange {
+  background: color-mix(in srgb, var(--orange, #e07b39) 12%, transparent);
+  color: var(--orange, #e07b39);
+  border: 1px solid color-mix(in srgb, var(--orange, #e07b39) 20%, transparent);
 }
 
 .bento-title {
@@ -785,6 +949,77 @@ section + section { border-top: 1px solid var(--border); }
 .bento-link:hover { gap: 8px; }
 
 /* Bento visuals */
+.bento-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bento-wide .bento-body {
+  border-right: 1px solid var(--border);
+}
+
+.bento-wide .bento-visual {
+  border-top: none;
+  border-left: none;
+}
+
+/* Tekton architecture diagram */
+.arch-diagram {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.arch-scenario {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.arch-scenario-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.arch-scenario-label.bad { color: #e07b39; }
+.arch-scenario-label.good { color: var(--green); }
+
+.arch-flow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.arch-node {
+  font-size: 0.62rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.arch-node.users   { background: color-mix(in srgb, var(--a1) 12%, transparent); color: var(--a1); border: 1px solid color-mix(in srgb, var(--a1) 25%, transparent); }
+.arch-node.service { background: color-mix(in srgb, var(--purple) 12%, transparent); color: var(--purple); border: 1px solid color-mix(in srgb, var(--purple) 25%, transparent); }
+.arch-node.danger  { background: color-mix(in srgb, #e07b39 12%, transparent); color: #e07b39; border: 1px solid color-mix(in srgb, #e07b39 25%, transparent); }
+.arch-node.safe    { background: color-mix(in srgb, var(--green) 12%, transparent); color: var(--green); border: 1px solid color-mix(in srgb, var(--green) 25%, transparent); }
+.arch-node.neutral { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+
+.arch-arrow {
+  font-size: 0.7rem;
+  color: var(--muted2);
+  padding: 0 1px;
+}
+
+.arch-arrow.overload { color: #e07b39; }
+
 .bento-visual {
   background: var(--surface2);
   border-top: 1px solid var(--border);
@@ -1625,6 +1860,19 @@ footer {
 @media (max-width: 960px) {
   .bento-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bento-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-wide .bento-body {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bento-wide .bento-visual {
+    border-top: 1px solid var(--border);
   }
 
   .os-card-inner,
